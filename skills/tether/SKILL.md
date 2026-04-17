@@ -12,7 +12,7 @@ Project folders drift. Index files get renamed with stray `-Index` suffixes. New
 
 | Flag | Purpose |
 |------|---------|
-| `--scope <project>` | Audit exactly one project folder (e.g. `--scope PARZVL`). Sub-project paths also accepted (`--scope PARZVL/Beard\ Club`). |
+| `--scope <project>` | Audit exactly one project folder (e.g. `--scope PARZVL`). Sub-project paths also accepted (`--scope PARZVL/<PROJECT-A>`). |
 | `--all` | Audit every project in `05-Projects/`. |
 | `--dry-run` | **Default.** Report violations; do not write. |
 | `--execute` | Apply fixes. Atomic per-project — if any step fails for a project, roll that project back. Other projects continue. |
