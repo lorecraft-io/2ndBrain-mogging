@@ -132,14 +132,14 @@ aliases:
 
 Two distinct people. Never collapse.
 
-- **<PERSON-C>** (one L) → `person_a_parzvl` → PARZVL/<PROJECT-A>. Nathan's collaborator on the <PROJECT-A> pitch.
+- **<PERSON-C>** (one L) → `person_a_parzvl` → PARZVL/<PROJECT-A>. Nate's collaborator on the <PROJECT-A> pitch.
 - **<PERSON-B>** (two L's) → `person_b_unknown` → project unknown (TBD).
 
 **Rules:**
 
 1. **Case-sensitive when spelling distinguishes.** "<PERSON-C>" and "<PERSON-B>" are two different lookup keys. Do not lowercase before matching.
 2. **Context scoring as tiebreaker.** If a transcript mentions "<PERSON-C>" near PARZVL / <PROJECT-A> terms, confidence is high. If "<PERSON-C>" appears cold with no project context and the surrounding conversation is about a non-PARZVL area, mark low confidence and surface to pending.
-3. **Prompt on genuine ambiguity.** If the transcript actually says something like "<PERSON-C> or <PERSON-B>" or the spelling is illegible (OCR, autocorrect drift), write both candidates into `aliases-pending.md` with the surrounding quote and let Nathan resolve.
+3. **Prompt on genuine ambiguity.** If the transcript actually says something like "<PERSON-C> or <PERSON-B>" or the spelling is illegible (OCR, autocorrect drift), write both candidates into `aliases-pending.md` with the surrounding quote and let Nate resolve.
 4. **Honor `public_safe: false`.** <PERSON-A> and <PERSON-B> both carry this flag per `feedback_no_public_placeholders.md`. Any skill generating public artifacts (READMEs, release notes, public repo commits) must read this flag and substitute a placeholder. Private vault notes are fine.
 
 ## Bootstrap sources

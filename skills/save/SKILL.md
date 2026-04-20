@@ -131,7 +131,7 @@ Write to `Claude-Memory/adr/ADR-<nnn>-<slug>.md`. Auto-link in `Claude-Memory/ad
 
 ## 8. Obsidian Tasks plugin syntax (06-Tasks writes)
 
-Anything the skill emits into `06-Tasks/` (any branch, any path under that prefix) MUST obey the plugin grammar — Nathan's entire task pipeline is downstream of this file's exact shape.
+Anything the skill emits into `06-Tasks/` (any branch, any path under that prefix) MUST obey the plugin grammar — Nate's entire task pipeline is downstream of this file's exact shape.
 
 Required grammar:
 

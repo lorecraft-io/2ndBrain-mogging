@@ -80,7 +80,7 @@ A single failing project never halts the full run. The final summary reports per
 - **Filename mismatch:** rename `FOO-Index.md` → `FOO.md`. Then `Grep` the vault for `[[FOO-Index]]` references and update them in the same transaction. If a rename would clobber an existing file, abort that project and flag manually.
 - **Missing Projects-Index entry:** insert `[[PROJECT]]` into the appropriate section of `Projects-Index.md` (business / creative / tech / personal — match sibling projects' section).
 - **Broken bidirectional link:** append the missing `[[X]]` into the correct section (Related, sub-projects, ## Repos, ## Owned By). Never replace existing content — only append.
-- **Unlinked mentions:** **never auto-convert.** Write candidates to `Claude-Memory/tether-candidates-YYYY-MM-DD.md` for Nathan to review. Each candidate includes the file path, line, surrounding context, and suggested wikilink.
+- **Unlinked mentions:** **never auto-convert.** Write candidates to `Claude-Memory/tether-candidates-YYYY-MM-DD.md` for Nate to review. Each candidate includes the file path, line, surrounding context, and suggested wikilink.
 
 ### Dead-link handling
 

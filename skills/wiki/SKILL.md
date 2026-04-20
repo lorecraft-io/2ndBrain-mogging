@@ -110,7 +110,7 @@ Source pages (`02-Sources/`) are strictly evidence. No interpretation, no opinio
 # <Title>
 
 ## Summary
-<2–5 sentences, strictly what the source says. No Nathan-voice. No editorial.>
+<2–5 sentences, strictly what the source says. No Nate-voice. No editorial.>
 
 ## Key Claims
 - Claim 1 (with in-source citation if available).
@@ -130,7 +130,7 @@ Source pages (`02-Sources/`) are strictly evidence. No interpretation, no opinio
 <optional: bullet dump of other notable quotes or data points>
 ```
 
-Interpretation, synthesis, and Nathan-voice live in concept pages (`03-Concepts/`). Source pages are the audit trail. (The pre-mogging `03-Permanent/` folder was collapsed into `03-Concepts/` during the 2026-04-16 refactor.)
+Interpretation, synthesis, and Nate-voice live in concept pages (`03-Concepts/`). Source pages are the audit trail. (The pre-mogging `03-Permanent/` folder was collapsed into `03-Concepts/` during the 2026-04-16 refactor.)
 
 ### 3.3 Concept page updates (prefer update)
 

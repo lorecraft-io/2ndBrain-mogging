@@ -12,7 +12,7 @@ The vault gets denser every day. Some of that density is signal — a concept sh
 
 - User runs `/emerge` manually, usually at end of week or start of a review.
 - Scheduled weekly agent (Sunday 9pm EST) runs `/emerge --days 7 --audit` non-interactively and writes the report to `01-Conversations/VAULT/reports/emerge-YYYY-WW.md`.
-- After a burst of activity (e.g. Nathan just closed a Lava deliverable sprint and wants to see what emerged).
+- After a burst of activity (e.g. Nate just closed a Lava deliverable sprint and wants to see what emerged).
 
 Do NOT auto-run `/emerge` inside another skill's pipeline except the scheduled agent. It's expensive and slow.
 
@@ -51,7 +51,7 @@ Per file, extract:
 - **Concepts**: noun phrases appearing ≥2 times or in H1/H2 headings.
 - **Tags**: frontmatter tags + inline `#tag` mentions.
 - **Actions**: verbs attached to project names (e.g. "shipped Morgen", "killed <project-a-report>").
-- **Sentiment markers**: Nathan's loaded language — "panic", "theater", "clean", "mogging", "janky", "ship-and-fix-forward", all caps emphasis.
+- **Sentiment markers**: Nate's loaded language — "panic", "theater", "clean", "mogging", "janky", "ship-and-fix-forward", all caps emphasis.
 
 Signals are stored as `(file_path, signal_type, signal_value, weight)` tuples.
 
@@ -71,7 +71,7 @@ For every surviving cluster, generate 2-3 candidate names. **Name discipline**:
 - **Short**: 2-5 words.
 - **Concrete**: prefer nouns over gerunds, compounds over abstractions.
 - **Anti-jargon**: do not use "synergy", "orchestration", "framework", "paradigm", "leverage", "ecosystem", "stack" unless the cluster is literally about a software stack.
-- **Match Nathan's naming DNA**: reference `feedback_cli_maxxing_folder`, `project_tribecoding`, `project_fidgetcoding_rename` in Claude-Memory. Names are playful-terse ("tribecoding", "mogging", "task-maxxing"), not PMish ("collaborative coding ecosystem").
+- **Match Nate's naming DNA**: reference `feedback_cli_maxxing_folder`, `project_tribecoding`, `project_fidgetcoding_rename` in Claude-Memory. Names are playful-terse ("tribecoding", "mogging", "task-maxxing"), not PMish ("collaborative coding ecosystem").
 - **No emoji**. No brackets. No trailing ellipses.
 
 Pick the strongest candidate as primary, list the other two as alternates.
@@ -160,7 +160,7 @@ Weekly agent config (managed in `~/.claude/hooks/` not here):
 The `--audit` flag means:
 - No interactive prompts.
 - Skip clusters below `--min-cluster` silently.
-- Never promote automatically — leave that to Nathan.
+- Never promote automatically — leave that to Nate.
 - If no clusters survive, still write the report (noting "no emergent patterns this week") — silence is also data.
 
 ## Edge Cases

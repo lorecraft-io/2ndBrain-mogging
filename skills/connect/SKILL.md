@@ -28,7 +28,7 @@ Do NOT invoke for trivially-related pairs (same folder, overlapping tags) — th
 
 | Flag | Default | Behavior |
 |---|---|---|
-| `--via <intermediate>` | none | Force the bridge to route through a specific intermediate note. Useful when Nathan has a hypothesis and wants verification. |
+| `--via <intermediate>` | none | Force the bridge to route through a specific intermediate note. Useful when Nate has a hypothesis and wants verification. |
 | `--depth surface\|deep` | `surface` | `surface` = direct adjacency only (1-2 hops). `deep` = up to 3-hop paths through shared tags, entities, stakeholders. |
 
 ## Hard Rule: NEVER WRITES
@@ -38,7 +38,7 @@ Do NOT invoke for trivially-related pairs (same folder, overlapping tags) — th
 - No `Edit` tool access.
 - No file creation under any circumstance.
 
-Output is terminal-only. If Nathan wants to persist a connection, he copy-pastes manually. This is by design — most connections are junk, and writing them would pollute the vault. The friction of manual copy is the filter.
+Output is terminal-only. If Nate wants to persist a connection, he copy-pastes manually. This is by design — most connections are junk, and writing them would pollute the vault. The friction of manual copy is the filter.
 
 ## Pipeline
 
