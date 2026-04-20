@@ -16,7 +16,7 @@ reads:
 
 # health — Sunday 9pm ET vault integrity check
 
-Triggered by `scheduled/launchd/io.lorecraft.mogging.health.plist` at 21:00 America/New_York on Sundays. The agent's job is signal-to-human: is the vault + sync + plugin pipeline healthy enough that Nathan can trust Monday morning's data?
+Triggered by `scheduled/launchd/io.lorecraft.mogging.health.plist` at 21:00 America/New_York on Sundays. The agent's job is signal-to-human: is the vault + sync + plugin pipeline healthy enough that Nate can trust Monday morning's data?
 
 ## 1. Checks (four gates)
 
@@ -46,7 +46,7 @@ If stale: flag + suggest the user check the n8n dashboard.
 
 Pull the Morgen task count (`list_tasks` with `limit=500` per `reference_morgen_api_pagination`). Pull the Obsidian task count via `Grep -c` on `^- \[ \]` across `06-Tasks/**/*.md` plus an aggregated scan of inline tasks in the project subtrees.
 
-The counts should match within ±5 (the in-flight tolerance covers tasks written to Obsidian in the last 15 minutes that haven't round-tripped through W1 to Morgen yet, per Nathan's `feedback_task_state_source_of_truth` rule).
+The counts should match within ±5 (the in-flight tolerance covers tasks written to Obsidian in the last 15 minutes that haven't round-tripped through W1 to Morgen yet, per Nate's `feedback_task_state_source_of_truth` rule).
 
 If the delta exceeds tolerance: flag the sync as drifting and include the top 10 UUIDs present in one side but not the other.
 
@@ -63,7 +63,7 @@ tags: [health, integrity, health-agent]
 ---
 ```
 
-Body is structured so the first line is a glanceable one-liner — this is the value Nathan gets from checking the report at a glance.
+Body is structured so the first line is a glanceable one-liner — this is the value Nate gets from checking the report at a glance.
 
 **First line (mandatory format):**
 

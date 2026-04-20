@@ -19,7 +19,7 @@ Triggered by `scheduled/launchd/io.lorecraft.mogging.morning.plist` at 08:00 Ame
 
 ## 1. Pull today's Morgen state
 
-Use the `morgen` MCP (Nathan's default calendar layer per memory rule "Morgen is Default"):
+Use the `morgen` MCP (Nate's default calendar layer per memory rule "Morgen is Default"):
 
 1. `list_events` with `start=<today 00:00 ET>` and `end=<today 23:59 ET>`. Include all-day events and timed events. Sort ascending by start time.
 2. `list_tasks` filtered to overdue (due < today) AND today (due = today). Dedupe on 🆔 — Obsidian-synced tasks return under both Morgen task and event queries.
@@ -58,7 +58,7 @@ Body sections in this order:
 
 ## 4. Prime `Claude-Memory/hot.md`
 
-`hot.md` is the short working-context file Nathan's other skills read at invocation to avoid cold starts. Prime it with:
+`hot.md` is the short working-context file Nate's other skills read at invocation to avoid cold starts. Prime it with:
 
 - Top 5 overdue tasks (one line each, with UUID).
 - Top 3 today events (title + start time).

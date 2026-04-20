@@ -65,7 +65,7 @@ fi
 # Case 2: existing customized file is preserved verbatim.
 # ---------------------------------------------------------------------------
 CUSTOM_CONTENT='aliases:
-  nate: ["Nathan", "nate"]
+  nate: ["Nate", "nate"]
   lorecraft: ["Lorecraft LLC", "lorecraft-io"]
 # user-custom-marker-do-not-remove
 '

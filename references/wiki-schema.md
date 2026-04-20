@@ -19,7 +19,7 @@ Downstream consumers (all required to reference this file):
 
 ## 1. Folder contract
 
-The vault follows Nathan's stripped operator layout. The plugin treats each folder as having exactly one writer role plus a set of constraints. Skills that violate the writer role get hard-rejected in their own failure-mode table.
+The vault follows Nate's stripped operator layout. The plugin treats each folder as having exactly one writer role plus a set of constraints. Skills that violate the writer role get hard-rejected in their own failure-mode table.
 
 | Folder | Role | Primary writer | Secondary writers | Constraints |
 |---|---|---|---|---|
@@ -114,7 +114,7 @@ superseded_by: "[[ADR-012-new-name]]"        # optional; filled when a later ADR
 
 ## 5. Obsidian Tasks plugin syntax
 
-Nathan's task pipeline (Obsidian ↔ Morgen ↔ Notion via n8n W1/W2/W3) is downstream of this exact shape. Rewriting tokens in the wrong order or dropping the UUID breaks sync.
+Nate's task pipeline (Obsidian ↔ Morgen ↔ Notion via n8n W1/W2/W3) is downstream of this exact shape. Rewriting tokens in the wrong order or dropping the UUID breaks sync.
 
 ### Canonical line
 
@@ -134,7 +134,7 @@ Glyphs:
 ### UUID rules (non-negotiable)
 
 1. **Every new task gets a 🆔.** Generate with `uuidgen | tr '[:upper:]' '[:lower:]'`. Append AFTER date/recurrence tokens, never inside the body.
-2. **Edits preserve 🆔 byte-for-byte.** A rewrite that changes or drops the UUID creates a duplicate task in Morgen and Notion that cannot be silently undone. The fix costs Nathan 15+ minutes of manual deduping.
+2. **Edits preserve 🆔 byte-for-byte.** A rewrite that changes or drops the UUID creates a duplicate task in Morgen and Notion that cannot be silently undone. The fix costs Nate 15+ minutes of manual deduping.
 3. **Missing UUID on a legacy task = mint + log.** If a skill touches a task line that lacks 🆔, it mints one AND appends a line to `Claude-Memory/task-uuid-mints.log` recording (file, line, uuid, timestamp). The mint is a side effect, so it must be auditable.
 
 ## 6. Security scrub
@@ -160,7 +160,7 @@ Every write path — file body AND commit message — passes through this regex 
 | `-----BEGIN (RSA|EC|DSA|OPENSSH|PRIVATE) KEY-----` + body + `-----END ...-----` | `PEM_PRIVATE_KEY` |
 | `^[A-Z][A-Z0-9_]+=.+$` inside a block that looks like `.env` (≥3 matching lines in a row) | `ENV_LINE` |
 
-### Nathan-specific PII
+### Nate-specific PII
 
 - `nate@lorecraft.io` stays as-is in plugin code but is redacted from any note body that would land in a public-sync branch.
 - Named collaborators identified as `internal_only: true` in the private aliases registry MUST be redacted from READMEs, release notes, migration docs, or any commit subject. (Memory rule: never reference internal-only collaborators by name in any public repo artifact.)
@@ -170,7 +170,7 @@ Scrub failure closed: if the regex engine errors (malformed pattern, OOM on huge
 
 ## 7. Git conventions
 
-The vault is a git repo; the mogging plugin ships commits from skills and agents alike. Nathan's `obsidian-tasks-sync` infra uses commit prefixes to distinguish human commits from bot commits for n8n W1 filtering.
+The vault is a git repo; the mogging plugin ships commits from skills and agents alike. Nate's `obsidian-tasks-sync` infra uses commit prefixes to distinguish human commits from bot commits for n8n W1 filtering.
 
 ### Branch naming
 
@@ -196,7 +196,7 @@ All five prefixes MUST be listed in the n8n W1 filter or the bot will get stuck 
 
 - **No force-push.** Ever. If a branch is broken, create a new one.
 - **No interactive rebase via skill.** `git rebase -i` requires a human at the keyboard.
-- **Direct-to-main is allowed** on the vault repo per Nathan's lorecraft-io convention — skills SHOULD still push to a short-lived branch and fast-forward merge so the branch name carries the session context, but they MUST NOT fail if the remote configuration blocks branching (degraded mode: commit to main directly).
+- **Direct-to-main is allowed** on the vault repo per Nate's lorecraft-io convention — skills SHOULD still push to a short-lived branch and fast-forward merge so the branch name carries the session context, but they MUST NOT fail if the remote configuration blocks branching (degraded mode: commit to main directly).
 - **Never `git commit --no-verify`** or `--no-gpg-sign`. Hooks exist to protect the repo; bypassing them erases their value.
 
 ## 8. Forbidden paths (all skills)
