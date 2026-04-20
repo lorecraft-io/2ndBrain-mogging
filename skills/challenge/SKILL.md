@@ -1,21 +1,21 @@
 ---
 name: challenge
-description: Adversarial vault agent. Takes an idea and argues against it using Nathan's own past notes, feedback files, and Claude-Memory — surfacing contradictions, constraints, cost patterns, stakeholder conflicts, and broken dependencies. Read-only by default; writes only with --save. Use when the user says /challenge, wants a devil's advocate, wants to stress-test a pitch/plan/purchase, or asks "am I wrong about X" / "poke holes in this."
+description: Adversarial vault agent. Takes an idea and argues against it using Nate's own past notes, feedback files, and Claude-Memory — surfacing contradictions, constraints, cost patterns, stakeholder conflicts, and broken dependencies. Read-only by default; writes only with --save. Use when the user says /challenge, wants a devil's advocate, wants to stress-test a pitch/plan/purchase, or asks "am I wrong about X" / "poke holes in this."
 allowed-tools: Read, Grep, Glob
 ---
 
 # /challenge — Adversarial Vault Agent
 
-Nathan's vault already holds the counter-arguments to most of his new ideas. He just hasn't re-read them. `/challenge` reads them for him and argues back — analytically, with citations, never with snark.
+Nate's vault already holds the counter-arguments to most of his new ideas. He just hasn't re-read them. `/challenge` reads them for him and argues back — analytically, with citations, never with snark.
 
 ## When to Invoke
 
 - User types `/challenge "idea text"` directly.
 - User pitches a new idea and asks for pushback, red-teaming, or stress-testing.
-- Before Nathan ships something irreversible (signs a contract, publishes a release, commits a purchase, commits architecture).
-- `/emerge` emits a candidate pattern Nathan is about to promote — auto-run `/challenge` over the pattern first.
+- Before Nate ships something irreversible (signs a contract, publishes a release, commits a purchase, commits architecture).
+- `/emerge` emits a candidate pattern Nate is about to promote — auto-run `/challenge` over the pattern first.
 
-Do NOT invoke for creative work-in-progress (poetry drafts, script drafts) unless Nathan explicitly asks. Creative friction kills creative flow.
+Do NOT invoke for creative work-in-progress (poetry drafts, script drafts) unless Nate explicitly asks. Creative friction kills creative flow.
 
 ## Invocation Forms
 
@@ -57,7 +57,7 @@ Run four parallel passes per anchor:
 - **Semantic**: Read conceptually adjacent notes (use Grep for synonyms + Glob for topic folders).
 - **Keyword**: Literal match on anchors.
 - **Wikilink graph**: Every note linking to or linked from resolved target notes becomes a candidate.
-- **Claude-Memory scan**: Grep MEMORY.md for every anchor — these entries are gold because they already encode Nathan's stated preferences.
+- **Claude-Memory scan**: Grep MEMORY.md for every anchor — these entries are gold because they already encode Nate's stated preferences.
 
 ### 4. Classify each hit
 
@@ -66,8 +66,8 @@ Every evidence fragment gets one of seven labels:
 | Label | Meaning |
 |---|---|
 | `CONTRADICTS` | Direct opposition. Past note says the opposite of the proposition. |
-| `CONSTRAINT` | Rule, policy, or boundary Nathan set (e.g. `feedback_no_prs`, `feedback_motion_auto_schedule`). Proposition violates it. |
-| `COST_PATTERN` | Evidence Nathan consistently under/over-estimates cost/time/effort on similar work. |
+| `CONSTRAINT` | Rule, policy, or boundary Nate set (e.g. `feedback_no_prs`, `feedback_motion_auto_schedule`). Proposition violates it. |
+| `COST_PATTERN` | Evidence Nate consistently under/over-estimates cost/time/effort on similar work. |
 | `STAKEHOLDER_CONFLICT` | The idea involves someone (<PERSON-A>, <PERSON-C>, <PERSON-H>, Dad, <PERSON-D>, <PERSON-I>, <PERSON-F>) whose documented preferences push back. |
 | `DEPENDENCY_BROKEN` | The idea depends on something documented as broken/stalled (`google_workspace_mcp_oauth_broken`, `task-to-calendar API gap`, etc.). |
 | `SUPPORTS` | Past note agrees with the proposition. Still collect these — needed for the balance check. |
@@ -119,7 +119,7 @@ Verdicts:
 
 ## Tone
 
-Analytical, not confrontational. Write like a research memo. No sarcasm, no "gotcha" framing. Nathan is arguing with his past self — the job is to make that past self's strongest case, not to score points. Every claim cited with file path and line number. Never hallucinate a citation; if the vault is silent on something, say so explicitly.
+Analytical, not confrontational. Write like a research memo. No sarcasm, no "gotcha" framing. Nate is arguing with his past self — the job is to make that past self's strongest case, not to score points. Every claim cited with file path and line number. Never hallucinate a citation; if the vault is silent on something, say so explicitly.
 
 ## Edge Cases
 
